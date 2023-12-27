@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>OriaC</title>
+        <script>
+            let num1=1;
+            let num2=2;
+            let num0=num1-num2;
+
+            if(num0<=0){
+                console.log("Este es un numero igual o menor que cero")
+            }else{
+                console.log("Este es un numero mayor que cero")
+            }
+
+            let texto1 = "Hola";
+            let texto2 = "Mundo";
+            console.log(frase(texto1, texto2));
+            function frase(a,b){
+                return a+" "+b;
+            }
+
+
+            const sumarflecha =(a,b) =>{
+                return a+" "+b;
+            }
+            console.log(sumarflecha(texto1, texto2));
+
+
+            const sumaimplicita = (a,b) => a+" "+b;
+            console.log(sumaimplicita(texto1, texto2));
+            
+            var date= new Date();
+            console.log(date.getFullYear());
+            console.log(date.getMonth()+1);
+            console.log(date.getDate());
+
+            function cerrarmodal(){
+                const modal = document.getElementById('modal');
+                modal.style.display='none';
+            }
+
+            function abrirmodal(){
+                const modal = document.getElementById('modal');
+                modal.style.display='block';
+            }
+
+            function aumentar(){
+                var total;
+                var precio=2;
+                var total=total+precio;
+                document.getElementById("total").textContent = total;
+            }
+
+        </script>
+        <style>
+            
+            #PAGINA{
+                text-align:center;
+                border:5px solid rgba(0, 0, 0, 0.856);
+                border-radius: 40px;
+            }
+            h1{
+                color:#0321FF ;
+            }
+            p{
+                color:#21FF03 ;
+            }
+            #boton-comprar{
+                background-color: #32478e;
+                color:#000000;
+                font-size: 30px;
+                padding: 10px 20 px;
+                border-radius: 5px;
+            }
+            #boton-comprar:hover{
+                background-color: #1a43cb;
+            }
+
+            .modal-bg{
+                position: fixed;
+                top:0;
+                left:0;
+                width: 100%;
+                height: 100%;
+                background-color: darkgray;
+            }
+
+            .modal-content{
+                position: absolute;
+                top: 50%;
+                left: 40%;
+                background-color: rgb(92, 104, 100);
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="PAGINA">
+            <h1>¡Compra ahora!</h1>
+            <img src="tg.jpg"alt="">
+            <img src="images.jpg"alt="">
+            <p>Derechos reservados</p>
+            <button id="boton-comprar" onclick="abrirmodal()">agregar al carrito </button>
+            <button onclick="aumentar()">Comprar</button>
+            <p>2 <span id="total"></span></p>
+            <!--  <button>compra ahora</button> -->
+        </div>
+
+        <div class="modal-bg" id="modal">
+            <div class="modal-content">
+                <h2>Ventana de confirmacion</h2>
+                <p>Esto es un ejemplo de ventana modal</p>
+                <button id="consolemodalbtn" Onclick="cerrarmodal()">cerrar</button>
+            </div>
+
+            
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tienda</title>
+        <Style>
+            body{
+                background-color: #293033;
+            }
+            .fondo{
+                
+                position: flex;
+                top:0;
+                left:0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .cabecera{
+                display: flex;
+                justify-content: center;
+                justify-items: center;
+                width: 100%;
+            }
+
+            .fondo .cabecera ul{
+                color: #019CE1
+            }
+
+            ul{
+                list-style-type: none;
+            }
+
+            li{
+                float: left
+            }
+
+            li a{
+                padding: 10px 22px;
+            }
+
+            li a:hover{
+                background-color:#2B3F47;
+                cursor: pointer;
+            }
+
+            .fondo .contenido{
+                border:#019CE1 ;
+            }
+
+            .fondo .contenido .fila{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                justify-items: center;
+            }
+
+            .fondo .contenido .fila div{
+                width: 100%;
+                height: 50%;
+            }
+
+
+            .fondo .contenido .fila .elemento .gallery .elemento1{
+                color: #019CE1;
+                border-width: 5px;
+                border-color: #2384AD;
+                border-style: solid;
+            }
+            .fondo .contenido .fila .elemento .gallery .elemento2{
+                color: #2384AD;
+                border-width: 5px;
+                border-color: #31647A;
+                border-style: solid;
+            }
+            .fondo .contenido .fila .elemento .gallery .elemento3{
+                color: #58c0e9;
+                border-width: 5px;
+                border-color: #019CE1;
+                border-style: solid;
+            }
+            .fondo .contenido .fila .elemento .gallery .elemento4{
+                color: aliceblue;
+                border-width: 5px;
+                border-color: #2B3F47;
+                border-style: solid;
+            }
+
+            .fondo .contenido .fila .elemento .gallery h1{
+                text-align: center;
+            }
+            .fondo .contenido .fila .elemento .gallery img{
+                width: 255px;
+                display: flex;
+            }
+            .fondo .contenido .fila .elemento .gallery .desc{
+                text-align: center;
+            }
+
+            .modal-bg{
+                display: none;
+                position: fixed;
+                top:0;
+                left:0;
+                width: 100%;
+                height: 100%;
+                background-color: darkgray;
+                opacity: 80%;
+                color: black;
+            }
+
+            .modal-content{
+                position: absolute;
+                top: 40%;
+                left: 35%;
+                background-color: rgb(190, 129, 59);
+                border-radius: 10px;
+                width: 30%;
+                height: 20%;
+            }
+
+        </Style>
+        <script>
+            function abrirmodal(){
+                const modal = document.getElementById('modal');
+                modal.style.display='block';
+            }
+
+            function cerrarmodal(){
+                const modal = document.getElementById('modal');
+                modal.style.display='none';
+            }
+        </script>
+    </head>
+    <body>
+        
+        <div class="fondo">
+            <div class="cabecera">
+                <ul>
+                    <li>
+                      <a>New</a>
+                    </li>
+                    <li>
+                      <a>Hombre</a>
+                    </li>
+                    <li>
+                      <a>Mujer</a>
+                    </li>
+                    <li>
+                      <a>Contactanos</a>
+                    </li>
+                    <li>
+                        <a>Esenciales</a>
+                    </li>
+                    <li>
+                        <a>Accesorios</a>
+                    </li>
+                  </ul>
+            </div>
+
+            <div class="contenido">
+                <div class="fila">
+                    <div class="elemento">
+                        <div class="gallery">
+                            <div class="elemento1">
+                                <h1>Pastel de Chocolate Triple Capa</h1>
+                                <center><img src="pastel1.jpg" alt="descripsion del pastel1"></center>
+                                <div class="desc">
+                                    <center><p style="width: 90%;">Un pastel indulgente con tres capas de bizcocho de chocolate suave y decadente, intercaladas con cremoso frosting de chocolate y adornado con virutas de chocolate negro..</p></center>
+                                </div>
+                                <center><button id="boton-comprar" onclick="abrirmodal()">Comprar ahora</button></center>
+                            </div>
+                                                        
+                        </div>
+                    </div>
+                    <div class="elemento">
+                        <div class="gallery">
+                            <div class="elemento2">
+                                <h1>Pastel de Fresa Fresca</h1>
+                            <center><img src="pastel2.jpg" alt="descripsion del pastel1"></center>
+                            <div class="desc">
+                                <center><p style="width: 90%;"></p>Un pastel ligero y esponjoso con capas de bizcocho de vainilla, rellenas de abundantes fresas frescas y crema batida, creando una explosión de sabor agridulce y dulce.</center>
+                            </div>
+                            <center><button id="boton-comprar" onclick="abrirmodal()">Comprar ahora</button></center>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="elemento">
+                        <div class="elemento">
+                            <div class="gallery">
+                                <div class="elemento3">
+                                    <h1>Pastel de Zanahoria con Nueces</h1>
+                                    <center><img src="pastel3.jpg" alt="descripsion del pastel1"></center>
+                                
+                                    <div class="desc">
+                                        <center><p style="width: 90%;"></p>Un pastel húmedo y delicioso con trozos de zanahoria rallada, nueces tostadas y un glaseado de queso crema suave que equilibra perfectamente los sabores y las texturas.</center>
+                                    </div>
+                                    <center><button id="boton-comprar" onclick="abrirmodal()">Comprar ahora</button></center>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elemento">
+                        <div class="elemento">
+                            <div class="gallery">
+                                <div class="elemento4">
+                                    <h1>Pastel de Limón Refrescante</h1>
+                                    <center><img src="pastel4.jpg" alt="descripsion del pastel1"></center>
+                                    <div class="desc">
+                                        <center><p style="width: 90%;"></p>Un pastel ligero y refrescante con un toque cítrico. El bizcocho de limón se combina con una crema de limón suave y está decorado con ralladura de limón para un sabor vibrante.</center>
+                                    </div>
+                                    <center><button id="boton-comprar" onclick="abrirmodal()">Comprar ahora</button></center>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div class="modal-bg" id="modal">
+            <div class="modal-content">
+                <center><h2>Confirmacion</h2></center>
+                <center><p>Esta seguro que desea comprar este producto?</p></center>
+                <center><button id="consolemodalbtn" Onclick="cerrarmodal()">Comprar</button></center>
+            </div>
+        </div>
+    </body>
+</html>

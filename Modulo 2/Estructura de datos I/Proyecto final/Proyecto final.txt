@@ -1,0 +1,1 @@
+Tienda en linea: Desarrolla una tienda en linea donde los usuarios puedan navegar por productos, agregar productos al carrito de compras y realizar pedidos. utiliza una base de datos para almacenar informacion sobre productos, usuarios y pedidos

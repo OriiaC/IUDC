@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Periódica</title>
+    <style>
+        /* Estilos para la tabla */
+        .periodic-table {
+            display: grid;
+            grid-template-columns: repeat(18, 1fr);
+            grid-template-rows: repeat(7, 1fr);
+            gap: 2px;
+
+        }
+
+        /* Estilos para cada celda de elemento */
+        .elemento {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 5px;
+            background-color: #fff;
+        }
+
+        /* Estilos para los elementoos */
+        .elemento.hydrogen {/*<- Inicio del estilo */
+            grid-column: 1 / 18;
+            grid-row: 1 / 10;
+            background-color: rgb(199, 124, 199);
+        }/*<- Final del estilo */
+
+        .elemento.helium {/*<- Inicio del estilo */
+            grid-column: 18 / 18;
+            grid-row: 1 / 10;
+            background-color: #99ce95;
+        }/*<- Final del estilo */
+
+        .elemento.lithium {/*<- Inicio del estilo */
+            grid-column: 1 / 18;
+            grid-row: 2 / 10;
+            background-color: aquamarine;
+        }/*<- Final del estilo */
+
+        .elemento.beryllium {/*<- Inicio del estilo */
+            grid-column: 2 / 18;
+            grid-row: 2 / 10;
+            background-color: #e9b673;
+        }/*<- Final del estilo */
+        
+        .elemento.boron {/*<- Inicio del estilo */
+            grid-column: 13 / 18;
+            grid-row: 2 / 10;
+            background-color: #eee7a5;
+        }/*<- Final del estilo */
+
+        .elemento.carbon {/*<- Inicio del estilo */
+            grid-column: 14 / 18;
+            grid-row: 2 / 10;
+            background-color: rgb(150, 124, 199);
+        }/*<- Final del estilo */
+
+        .elemento.nitrogen {/*<- Inicio del estilo */
+            grid-column: 15 / 18;
+            grid-row: 2 / 10;
+            background-color: rgb(150, 124, 199);
+        }/*<- Final del estilo */
+
+        .elemento.oxygen {/*<- Inicio del estilo */
+            grid-column: 16 / 18;
+            grid-row: 2 / 10;
+            background-color: rgb(150, 124, 199);
+        }/*<- Final del estilo */
+
+        .elemento.fluorine {/*<- Inicio del estilo */
+            grid-column: 17 / 18;
+            grid-row: 2 / 10;
+            background-color: rgb(179, 87, 179);
+        }/*<- Final del estilo */
+
+        .elemento.neon {/*<- Inicio del estilo */
+            grid-column: 18 / 18;
+            grid-row: 2 / 10;
+            background-color: #99ce95;
+        }/*<- Final del estilo */
+
+        .elemento.sodium {/*<- Inicio del estilo */
+            grid-column: 1 / 18;
+            grid-row: 3 / 10;
+            background-color: aquamarine;
+        }/*<- Final del estilo */
+
+        .elemento.magnesium {/*<- Inicio del estilo */
+            grid-column: 2 / 18;
+            grid-row: 3 / 10;
+            background-color: #e9b673;
+        }/*<- Final del estilo */
+
+        .elemento.aluminum {/*<- Inicio del estilo */
+            grid-column: 13 / 18;
+            grid-row: 3 / 10;
+            background-color: #95db8e;
+        }/*<- Final del estilo */
+
+        .elemento.silicon {/*<- Inicio del estilo */
+            grid-column: 14 / 18;
+            grid-row: 3 / 10;
+            background-color: #eee7a5;
+        }/*<- Final del estilo */
+
+        .elemento.phosphorus {/*<- Inicio del estilo */
+            grid-column: 15 / 18;
+            grid-row: 3 / 10;
+            background-color: rgb(150, 124, 199);
+        }/*<- Final del estilo */
+
+        .elemento.sulfur {/*<- Inicio del estilo */
+            grid-column: 16 / 18;
+            grid-row: 3 / 10;
+            background-color: rgb(150, 124, 199);
+        }/*<- Final del estilo */
+
+        .elemento.chlorine {/*<- Inicio del estilo */
+            grid-column: 17 / 18;
+            grid-row: 3 / 10;
+            background-color: rgb(179, 87, 179);
+        }/*<- Final del estilo */
+
+        .elemento.argon {/*<- Inicio del estilo */
+            grid-column: 18 / 18;
+            grid-row: 3 / 10;
+            background-color: #99ce95;
+        }/*<- Final del estilo */
+
+        .elemento.potasio {/*<- Inicio del estilo */
+            grid-column: 1 / 18;
+            grid-row: 4 / 10;
+            background-color: aquamarine;
+        }/*<- Final del estilo */
+
+        .elemento.calcio {/*<- Inicio del estilo */
+            grid-column: 2 / 18;
+            grid-row: 4 / 10;
+            background-color: #e9b673;
+        }/*<- Final del estilo */
+
+        .elemento.escandio {/*<- Inicio del estilo */
+            grid-column: 3 / 18;
+            grid-row: 4 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.titanio {/*<- Inicio del estilo */
+            grid-column: 4 / 18;
+            grid-row: 4 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.vanadio {/*<- Inicio del estilo */
+            grid-column: 5 / 18;
+            grid-row: 4 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.cromo {/*<- Inicio del estilo */
+            grid-column: 6 / 18;
+            grid-row: 4 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.manganeso {/*<- Inicio del estilo */
+            grid-column: 7 / 18;
+            grid-row: 4 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.hierro {/*<- Inicio del estilo */
+            grid-column: 8 / 18;
+            grid-row: 4 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.cobalto {/*<- Inicio del estilo */
+            grid-column: 9 / 18;
+            grid-row: 4 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.niquel {/*<- Inicio del estilo */
+            grid-column: 10 / 18;
+            grid-row: 4 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.cobre {/*<- Inicio del estilo */
+            grid-column: 11 / 18;
+            grid-row: 4 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.zinc {/*<- Inicio del estilo */
+            grid-column: 12 / 18;
+            grid-row: 4 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.galio {/*<- Inicio del estilo */
+            grid-column: 13 / 18;
+            grid-row: 4 / 10;
+            background-color: #95db8e;
+        }/*<- Final del estilo */
+
+        .elemento.germanio {/*<- Inicio del estilo */
+            grid-column: 14 / 18;
+            grid-row: 4 / 10;
+            background-color: #eee7a5;
+        }/*<- Final del estilo */
+
+        .elemento.arsenico {/*<- Inicio del estilo */
+            grid-column: 15 / 18;
+            grid-row: 4 / 10;
+            background-color: #eee7a5;
+        }/*<- Final del estilo */
+
+        .elemento.selenio {/*<- Inicio del estilo */
+            grid-column: 16 / 18;
+            grid-row: 4 / 10;
+            background-color: rgb(150, 124, 199);
+        }/*<- Final del estilo */
+
+        .elemento.bromo {/*<- Inicio del estilo */
+            grid-column: 17 / 18;
+            grid-row: 4 / 10;
+            background-color: rgb(179, 87, 179);
+        }/*<- Final del estilo */
+
+        .elemento.kripton {/*<- Inicio del estilo */
+            grid-column: 18 / 18;
+            grid-row: 4 / 10;
+            background-color: #99ce95;
+        }/*<- Final del estilo */
+
+        .elemento.rubidio {/*<- Inicio del estilo */
+            grid-column: 1 / 18;
+            grid-row: 5 / 10;
+            background-color: aquamarine;
+        }/*<- Final del estilo */
+
+        .elemento.estroncio {/*<- Inicio del estilo */
+            grid-column: 2 / 18;
+            grid-row: 5 / 10;
+            background-color: #e9b673;
+        }/*<- Final del estilo */
+
+        .elemento.itrio {/*<- Inicio del estilo */
+            grid-column: 3 / 18;
+            grid-row: 5 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.zirconio {/*<- Inicio del estilo */
+            grid-column: 4 / 18;
+            grid-row: 5 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.niobio {/*<- Inicio del estilo */
+            grid-column: 5 / 18;
+            grid-row: 5 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.molibdeno {/*<- Inicio del estilo */
+            grid-column: 6 / 18;
+            grid-row: 5 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.tecnecio {/*<- Inicio del estilo */
+            grid-column: 7 / 18;
+            grid-row: 5 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.rutenio {/*<- Inicio del estilo */
+            grid-column: 8 / 18;
+            grid-row: 5 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.rodio {/*<- Inicio del estilo */
+            grid-column: 9 / 18;
+            grid-row: 5 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.paladio {/*<- Inicio del estilo */
+            grid-column: 10 / 18;
+            grid-row: 5 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.plata {/*<- Inicio del estilo */
+            grid-column: 11 / 18;
+            grid-row: 5 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.cadmio {/*<- Inicio del estilo */
+            grid-column: 12 / 18;
+            grid-row: 5 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.indio {/*<- Inicio del estilo */
+            grid-column: 13 / 18;
+            grid-row: 5 / 10;
+            background-color: #95db8e;
+        }/*<- Final del estilo */
+
+        .elemento.estaño {/*<- Inicio del estilo */
+            grid-column: 14 / 18;
+            grid-row: 5 / 10;
+            background-color: #95db8e;
+        }/*<- Final del estilo */
+
+        .elemento.antimonio {/*<- Inicio del estilo */
+            grid-column: 15 / 18;
+            grid-row: 5 / 10;
+            background-color: #eee7a5;
+        }/*<- Final del estilo */
+
+        .elemento.telurio {/*<- Inicio del estilo */
+            grid-column: 16 / 18;
+            grid-row: 5 / 10;
+            background-color: #eee7a5;
+        }/*<- Final del estilo */
+
+        .elemento.yodo {/*<- Inicio del estilo */
+            grid-column: 17 / 18;
+            grid-row: 5 / 10;
+            background-color: rgb(179, 87, 179);
+        }/*<- Final del estilo */
+
+        .elemento.xeon {/*<- Inicio del estilo */
+            grid-column: 18 / 18;
+            grid-row: 5 / 10;
+            background-color: #99ce95;
+        }/*<- Final del estilo */
+
+        .elemento.cesio {/*<- Inicio del estilo */
+            grid-column: 1 / 18;
+            grid-row: 6 / 10;
+            background-color: aquamarine;
+        }/*<- Final del estilo */
+
+        .elemento.bario {/*<- Inicio del estilo */
+            grid-column: 2 / 18;
+            grid-row: 6 / 10;
+            background-color: #e9b673;
+        }/*<- Final del estilo */
+
+        .elemento.lutecio {/*<- Inicio del estilo */
+            grid-column: 3 / 18;
+            grid-row: 6 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.hafnio {/*<- Inicio del estilo */
+            grid-column: 4 / 18;
+            grid-row: 6 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.tantalio {/*<- Inicio del estilo */
+            grid-column: 5 / 18;
+            grid-row: 6 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.wolframio {/*<- Inicio del estilo */
+            grid-column: 6 / 18;
+            grid-row: 6 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.renio {/*<- Inicio del estilo */
+            grid-column: 7 / 18;
+            grid-row: 6 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.osmio {/*<- Inicio del estilo */
+            grid-column: 8 / 18;
+            grid-row: 6 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.iridio {/*<- Inicio del estilo */
+            grid-column: 9 / 18;
+            grid-row: 6 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.platino {/*<- Inicio del estilo */
+            grid-column: 10 / 18;
+            grid-row: 6 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.oro {/*<- Inicio del estilo */
+            grid-column: 11 / 18;
+            grid-row: 6 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.mercurio {/*<- Inicio del estilo */
+            grid-column: 12 / 18;
+            grid-row: 6 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.talio {/*<- Inicio del estilo */
+            grid-column: 13 / 18;
+            grid-row: 6 / 10;
+            background-color: #95db8e;
+        }/*<- Final del estilo */
+
+        .elemento.plomo {/*<- Inicio del estilo */
+            grid-column: 14 / 18;
+            grid-row: 6 / 10;
+            background-color: #95db8e;
+        }/*<- Final del estilo */
+
+        .elemento.bismuto {/*<- Inicio del estilo */
+            grid-column: 15 / 18;
+            grid-row: 6 / 10;
+            background-color: #95db8e;
+        }/*<- Final del estilo */
+
+        .elemento.polonio {/*<- Inicio del estilo */
+            grid-column: 16 / 18;
+            grid-row: 6 / 10;
+            background-color: #eee7a5;
+        }/*<- Final del estilo */
+
+        .elemento.astato {/*<- Inicio del estilo */
+            grid-column: 17 / 18;
+            grid-row: 6 / 10;
+            background-color: rgb(179, 87, 179);
+        }/*<- Final del estilo */
+
+        .elemento.radon {/*<- Inicio del estilo */
+            grid-column: 18 / 18;
+            grid-row: 6 / 10;
+            background-color: #99ce95;
+        }/*<- Final del estilo */
+
+        .elemento.francio {/*<- Inicio del estilo */
+            grid-column: 1 / 18;
+            grid-row: 7 / 10;
+            background-color: aquamarine;
+        }/*<- Final del estilo */
+
+        .elemento.radio {/*<- Inicio del estilo */
+            grid-column: 2 / 18;
+            grid-row: 7 / 10;
+            background-color: #e9b673;
+        }/*<- Final del estilo */
+
+        .elemento.laurencio {/*<- Inicio del estilo */
+            grid-column: 3 / 18;
+            grid-row: 7 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.rutherfordio {/*<- Inicio del estilo */
+            grid-column: 4 / 18;
+            grid-row: 7 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.dubnio {/*<- Inicio del estilo */
+            grid-column: 5 / 18;
+            grid-row: 7 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.seaborgio {/*<- Inicio del estilo */
+            grid-column: 6 / 18;
+            grid-row: 7 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.bohrio {/*<- Inicio del estilo */
+            grid-column: 7 / 18;
+            grid-row: 7 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.hassio {/*<- Inicio del estilo */
+            grid-column: 8 / 18;
+            grid-row: 7 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.meitnerio {/*<- Inicio del estilo */
+            grid-column: 9 / 18;
+            grid-row: 7 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.darmstadtio {/*<- Inicio del estilo */
+            grid-column: 10 / 18;
+            grid-row: 7 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.roentgenio {/*<- Inicio del estilo */
+            grid-column: 11 / 18;
+            grid-row: 7 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.copernicio {/*<- Inicio del estilo */
+            grid-column: 12 / 18;
+            grid-row: 7 / 10;
+            background-color: #94afda;
+        }/*<- Final del estilo */
+
+        .elemento.nihonio {/*<- Inicio del estilo */
+            grid-column: 13 / 18;
+            grid-row: 7 / 10;
+            background-color: #95db8e;
+        }/*<- Final del estilo */
+
+        .elemento.flerovio {/*<- Inicio del estilo */
+            grid-column: 14 / 18;
+            grid-row: 7 / 10;
+            background-color: #95db8e;
+        }/*<- Final del estilo */
+
+        .elemento.moscovio {/*<- Inicio del estilo */
+            grid-column: 15 / 18;
+            grid-row: 7 / 10;
+            background-color: #95db8e;
+        }/*<- Final del estilo */
+
+        .elemento.livermorio {/*<- Inicio del estilo */
+            grid-column: 16 / 18;
+            grid-row: 7 / 10;
+            background-color: #95db8e;
+
+        }/*<- Final del estilo */
+
+        .elemento.teneso {/*<- Inicio del estilo */
+            grid-column: 17 / 18;
+            grid-row: 7 / 10;
+            background-color: rgb(179, 87, 179);
+        }/*<- Final del estilo */
+
+        .elemento.oganeson {/*<- Inicio del estilo */
+            grid-column: 18 / 18;
+            grid-row: 7 / 10;
+            background-color: #99ce95;
+        }/*<- Final del estilo */
+        
+        
+        /* Agrega más estilos y clases para otros elementoos */
+    </style>
+</head>
+<body>
+    <div class="periodic-table">
+            <!-- Hidrógeno -->
+            <div class="elemento hydrogen">
+                <div class="elemento-symbol">H</div>
+                <div class="elemento-name">Hidrógeno</div>
+                <div class="elemento-number">1</div>
+            </div>
+
+            <!-- Helio -->
+            <div class="elemento helium">
+                <div class="elemento-symbol">He</div>
+                <div class="elemento-name">Helio</div>
+                <div class="elemento-number">2</div>
+            </div>
+                    <!-- Litio -->
+            <div class="elemento lithium">
+                <div class="elemento-symbol">Li</div>
+                <div class="elemento-name">Litio</div>
+                <div class="elemento-number">3</div>
+            </div>
+
+            <!-- Berilio -->
+            <div class="elemento beryllium">
+                <div class="elemento-symbol">Be</div>
+                <div class="elemento-name">Berilio</div>
+                <div class="elemento-number">4</div>
+            </div>
+
+            <!-- Boro -->
+            <div class="elemento boron">
+                <div class="elemento-symbol">B</div>
+                <div class="elemento-|name">Boro</div>
+                <div class="elemento-number">5</div>
+            </div>
+
+            <!-- Carbono -->
+            <div class="elemento carbon">
+                <div class="elemento-symbol">C</div>
+                <div class="elemento-name">Carbono</div>
+                <div class="elemento-number">6</div>
+            </div>
+
+            <!-- Nitrógeno -->
+            <div class="elemento nitrogen">
+                <div class="elemento-symbol">N</div>
+                <div class="elemento-name">Nitrógeno</div>
+                <div class="elemento-number">7</div>
+            </div>
+
+            <!-- Oxígeno -->
+            <div class="elemento oxygen">
+                <div class="elemento-symbol">O</div>
+                <div class="elemento-name">Oxígeno</div>
+                <div class="elemento-number">8</div>
+            </div>
+
+            <!-- Flúor -->
+            <div class="elemento fluorine">
+                <div class="elemento-symbol">F</div>
+                <div class="elemento-name">Flúor</div>
+                <div class="elemento-number">9</div>
+            </div>
+
+            <!-- Neón -->
+            <div class="elemento neon">
+                <div class="elemento-symbol">Ne</div>
+                <div class="elemento-name">Neón</div>
+                <div class="elemento-number">10</div>
+            </div>
+
+            <!-- Sodio -->
+            <div class="elemento sodium">
+                <div class="elemento-symbol">Na</div>
+                <div class="elemento-name">Sodio</div>
+                <div class="elemento-number">11</div>
+            </div>
+
+            <!-- Magnesio -->
+            <div class="elemento magnesium">
+                <div class="elemento-symbol">Mg</div>
+                <div class="elemento-name">Magnesio</div>
+                <div class="elemento-number">12</div>
+            </div>
+
+            <!-- Aluminio -->
+            <div class="elemento aluminum">
+                <div class="elemento-symbol">Al</div>
+                <div class="elemento-name">Aluminio</div>
+                <div class="elemento-number">13</div>
+            </div>
+
+            <!-- Silicio -->
+            <div class="elemento silicon">
+                <div class="elemento-symbol">Si</div>
+                <div class="elemento-name">Silicio</div>
+                <div class="elemento-number">14</div>
+            </div>
+
+            <!-- Fósforo -->
+            <div class="elemento phosphorus">
+                <div class="elemento-symbol">P</div>
+                <div class="elemento-name">Fósforo</div>
+                <div class="elemento-number">15</div>
+            </div>
+
+            <!-- Azufre -->
+            <div class="elemento sulfur">
+                <div class="elemento-symbol">S</div>
+                <div class="elemento-name">Azufre</div>
+                <div class="elemento-number">16</div>
+            </div>
+
+            <!-- Cloro -->
+            <div class="elemento chlorine">
+                <div class="elemento-symbol">Cl</div>
+                <div class="elemento-name">Cloro</div>
+                <div class="elemento-number">17</div>
+            </div>
+
+            <!-- Argón -->
+            <div class="elemento argon">
+                <div class="elemento-symbol">Ar</div>
+                <div class="elemen|to-|name">Argón</div>
+                <div class="elemento-number">18</div>
+            </div>
+
+            <!-- Potasio -->
+            <div class="elemento potasio">
+                <div class="elemento-symbol">K</div>
+                <div class="elemen|to-|name">Potasio</div>
+                <div class="elemento-number">19</div>
+            </div>
+
+            <!-- Calcio -->
+            <div class="elemento calcio">
+                <div class="elemento-symbol">Ca</div>
+                <div class="elemen|to-|name">Calcio</div>
+                <div class="elemento-number">20</div>
+            </div>
+
+            <!-- Escandio -->
+            <div class="elemento escandio">
+                <div class="elemento-symbol">K</div>
+                <div class="elemen|to-|name">Escandio</div>
+                <div class="elemento-number">21</div>
+            </div>
+
+            <!-- Titanio -->
+            <div class="elemento titanio">
+                <div class="elemento-symbol">Ti</div>
+                <div class="elemen|to-|name">Titanio</div>
+                <div class="elemento-number">22</div>
+            </div>
+
+            <!-- Vanadio -->
+            <div class="elemento vanadio">
+                <div class="elemento-symbol">V</div>
+                <div class="elemen|to-|name">Vanadio</div>
+                <div class="elemento-number">23</div>
+            </div>
+
+            <!-- Cromo -->
+            <div class="elemento cromo">
+                <div class="elemento-symbol">Cr</div>
+                <div class="elemen|to-|name">Cromo</div>
+                <div class="elemento-number">24</div>
+            </div>
+
+            <!-- Manganeso -->
+            <div class="elemento manganeso">
+                <div class="elemento-symbol">Mn</div>
+                <div class="elemen|to-|name">Manganeso</div>
+                <div class="elemento-number">25</div>
+            </div>
+
+            <!-- Hierro -->
+            <div class="elemento hierro">
+                <div class="elemento-symbol">Fe</div>
+                <div class="elemen|to-|name">Hierro</div>
+                <div class="elemento-number">26</div>
+            </div>
+
+            <!-- Cobalto -->
+            <div class="elemento cobalto">
+                <div class="elemento-symbol">Co</div>
+                <div class="elemen|to-|name">Cobalto</div>
+                <div class="elemento-number">27</div>
+            </div>
+
+            <!-- Níquel -->
+            <div class="elemento niquel">
+                <div class="elemento-symbol">Ni</div>
+                <div class="elemen|to-|name">Níquel</div>
+                <div class="elemento-number">28</div>
+            </div>
+
+            <!-- Cobre -->
+            <div class="elemento cobre">
+                <div class="elemento-symbol">Cu</div>
+                <div class="elemen|to-|name">Cobre</div>
+                <div class="elemento-number">29</div>
+            </div>
+
+            <!-- Zinc -->
+            <div class="elemento zinc">
+                <div class="elemento-symbol">Zn</div>
+                <div class="elemen|to-|name">Zinc</div>
+                <div class="elemento-number">30</div>
+            </div>
+
+            <!-- Galio -->
+            <div class="elemento galio">
+                <div class="elemento-symbol">Ga</div>
+                <div class="elemen|to-|name">Galio</div>
+                <div class="elemento-number">31</div>
+            </div>
+
+            <!-- Germanio -->
+            <div class="elemento germanio">
+                <div class="elemento-symbol">Ge</div>
+                <div class="elemen|to-|name">Germanio</div>
+                <div class="elemento-number">32</div>
+            </div>
+
+            <!-- Arsénico -->
+            <div class="elemento arsenico">
+                <div class="elemento-symbol">As</div>
+                <div class="elemen|to-|name">Arsénico</div>
+                <div class="elemento-number">33</div>
+            </div>
+
+            <!-- Selenio -->
+            <div class="elemento selenio">
+                <div class="elemento-symbol">Se</div>
+                <div class="elemen|to-|name">Selenio</div>
+                <div class="elemento-number">34</div>
+            </div>
+
+            <!-- Bromo -->
+            <div class="elemento bromo">
+                <div class="elemento-symbol">Br</div>
+                <div class="elemen|to-|name">Bromo</div>
+                <div class="elemento-number">35</div>
+            </div>
+
+            <!-- Kriptón -->
+            <div class="elemento kripton">
+                <div class="elemento-symbol">Kr</div>
+                <div class="elemen|to-|name">Kriptón</div>
+                <div class="elemento-number">36</div>
+            </div>
+
+            <!-- Rubidio -->
+            <div class="elemento rubidio">
+                <div class="elemento-symbol">Rb</div>
+                <div class="elemen|to-|name">Rubidio</div>
+                <div class="elemento-number">37</div>
+            </div>
+
+            <!-- Estroncio -->
+            <div class="elemento estroncio">
+                <div class="elemento-symbol">Sr</div>
+                <div class="elemen|to-|name">Estroncio</div>
+                <div class="elemento-number">38</div>
+            </div>
+
+            <!-- Itrio -->
+            <div class="elemento itrio">
+                <div class="elemento-symbol">Y</div>
+                <div class="elemen|to-|name">Itrio</div>
+                <div class="elemento-number">39</div>
+            </div>
+
+            <!-- Zirconio -->
+            <div class="elemento zirconio">
+                <div class="elemento-symbol">Nb</div>
+                <div class="elemen|to-|name">Zirconio</div>
+                <div class="elemento-number">40</div>
+            </div>
+
+            <!-- Niobio -->
+            <div class="elemento niobio">
+                <div class="elemento-symbol">Mo</div>
+                <div class="elemen|to-|name">Niobio</div>
+                <div class="elemento-number">41</div>
+            </div>
+
+            <!-- Molibdeno -->
+            <div class="elemento molibdeno">
+                <div class="elemento-symbol">Tc</div>
+                <div class="elemen|to-|name">Molibdeno</div>
+                <div class="elemento-number">42</div>
+            </div>
+
+            <!-- Tecnecio -->
+            <div class="elemento tecnecio">
+                <div class="elemento-symbol">Ru</div>
+                <div class="elemen|to-|name">Tecnecio</div>
+                <div class="elemento-number">43</div>
+            </div>
+
+            <!-- Rutenio -->
+            <div class="elemento rutenio">
+                <div class="elemento-symbol">Rh</div>
+                <div class="elemen|to-|name">Rutenio</div>
+                <div class="elemento-number">44</div>
+            </div>
+
+            <!-- Rodio -->
+            <div class="elemento rodio">
+                <div class="elemento-symbol">Pd</div>
+                <div class="elemen|to-|name">Rodio</div>
+                <div class="elemento-number">45</div>
+            </div>
+
+            <!-- Paladio -->
+            <div class="elemento paladio">
+                <div class="elemento-symbol">Ag</div>
+                <div class="elemen|to-|name">Paladio</div>
+                <div class="elemento-number">46</div>
+            </div>
+
+            <!-- Plata -->
+            <div class="elemento plata">
+                <div class="elemento-symbol">Cd</div>
+                <div class="elemen|to-|name">Plata</div>
+                <div class="elemento-number">47</div>
+            </div>
+
+            <!-- Cadmio -->
+            <div class="elemento cadmio">
+                <div class="elemento-symbol">In</div>
+                <div class="elemen|to-|name">Cadmio</div>
+                <div class="elemento-number">48</div>
+            </div>
+
+            <!-- Indio -->
+            <div class="elemento indio">
+                <div class="elemento-symbol">Sn</div>
+                <div class="elemen|to-|name">Indio</div>
+                <div class="elemento-number">49</div>
+            </div>
+
+            <!-- Estaño -->
+            <div class="elemento estaño">
+                <div class="elemento-symbol">Sb</div>
+                <div class="elemen|to-|name">Estaño</div>
+                <div class="elemento-number">50</div>
+            </div>
+
+            <!-- Antimonio -->
+            <div class="elemento antimonio">
+                <div class="elemento-symbol">Te</div>
+                <div class="elemen|to-|name">Antimonio</div>
+                <div class="elemento-number">51</div>
+            </div>
+
+            <!-- Telurio -->
+            <div class="elemento telurio">
+                <div class="elemento-symbol">Rb</div>
+                <div class="elemen|to-|name">Telurio</div>
+                <div class="elemento-number">52</div>
+            </div>
+
+            <!-- Yodo -->
+            <div class="elemento yodo">
+                <div class="elemento-symbol">Rb</div>
+                <div class="elemen|to-|name">Yodo</div>
+                <div class="elemento-number">53</div>
+            </div>
+
+            <!-- Xeón -->
+            <div class="elemento xeon">
+                <div class="elemento-symbol">Rb</div>
+                <div class="elemen|to-|name">Xeón</div>
+                <div class="elemento-number">54</div>
+            </div>
+
+            <!-- Cesio -->
+            <div class="elemento cesio">
+                <div class="elemento-symbol">Cs</div>
+                <div class="elemen|to-|name">Cesio</div>
+                <div class="elemento-number">55</div>
+            </div>
+
+            <!-- Bario -->
+            <div class="elemento bario">
+                <div class="elemento-symbol">Ba</div>
+                <div class="elemen|to-|name">Bario</div>
+                <div class="elemento-number">56</div>
+            </div>
+
+            <!-- Lutecio -->
+            <div class="elemento lutecio">
+                <div class="elemento-symbol">Lu</div>
+                <div class="elemen|to-|name">Lutecio</div>
+                <div class="elemento-number">71</div>
+            </div>
+
+            <!-- Hafnio -->
+            <div class="elemento hafnio">
+                <div class="elemento-symbol">Hf</div>
+                <div class="elemen|to-|name">Hafnio</div>
+                <div class="elemento-number">72</div>
+            </div>
+
+            <!-- Tantalio -->
+            <div class="elemento tantalio">
+                <div class="elemento-symbol">Ta</div>
+                <div class="elemen|to-|name">Tantalio</div>
+                <div class="elemento-number">73</div>
+            </div>
+
+            <!-- Wolframio -->
+            <div class="elemento wolframio">
+                <div class="elemento-symbol">W</div>
+                <div class="elemen|to-|name">Wolframio</div>
+                <div class="elemento-number">74</div>
+            </div>
+
+            <!-- Renio -->
+            <div class="elemento renio">
+                <div class="elemento-symbol">Re</div>
+                <div class="elemen|to-|name">Renio</div>
+                <div class="elemento-number">75</div>
+            </div>
+
+            <!-- Osmio -->
+            <div class="elemento osmio">
+                <div class="elemento-symbol">Os</div>
+                <div class="elemen|to-|name">Osmio</div>
+                <div class="elemento-number">76</div>
+            </div>
+
+            <!-- Iridio -->
+            <div class="elemento iridio">
+                <div class="elemento-symbol">Ir</div>
+                <div class="elemen|to-|name">Iridio</div>
+                <div class="elemento-number">77</div>
+            </div>
+
+            <!-- Platino -->
+            <div class="elemento platino">
+                <div class="elemento-symbol">Pt</div>
+                <div class="elemen|to-|name">Platino</div>
+                <div class="elemento-number">78</div>
+            </div>
+
+            <!-- Oro -->
+            <div class="elemento oro">
+                <div class="elemento-symbol">Au</div>
+                <div class="elemen|to-|name">Oro</div>
+                <div class="elemento-number">79</div>
+            </div>
+
+            <!-- Mercurio -->
+            <div class="elemento mercurio">
+                <div class="elemento-symbol">Hg</div>
+                <div class="elemen|to-|name">Mercurio</div>
+                <div class="elemento-number">80</div>
+            </div>
+
+            <!-- Talio -->
+            <div class="elemento talio">
+                <div class="elemento-symbol">Tl</div>
+                <div class="elemen|to-|name">Talio</div>
+                <div class="elemento-number">81</div>
+            </div>
+
+            <!-- Plomo -->
+            <div class="elemento plomo">
+                <div class="elemento-symbol">Pb</div>
+                <div class="elemen|to-|name">Plomo</div>
+                <div class="elemento-number">82</div>
+            </div>
+
+            <!-- Bismuto -->
+            <div class="elemento bismuto">
+                <div class="elemento-symbol">Bi</div>
+                <div class="elemen|to-|name">Bismuto</div>
+                <div class="elemento-number">83</div>
+            </div>
+
+            <!-- Polonio -->
+            <div class="elemento polonio">
+                <div class="elemento-symbol">Po</div>
+                <div class="elemen|to-|name">Polonio</div>
+                <div class="elemento-number">84</div>
+            </div>
+
+            <!-- Astato -->
+            <div class="elemento astato">
+                <div class="elemento-symbol">At</div>
+                <div class="elemen|to-|name">Astato</div>
+                <div class="elemento-number">85</div>
+            </div>
+
+            <!-- Radón -->
+            <div class="elemento radon">
+                <div class="elemento-symbol">Rn</div>
+                <div class="elemen|to-|name">Radón</div>
+                <div class="elemento-number">86</div>
+            </div>
+
+            <!-- Francio -->
+            <div class="elemento francio">
+                <div class="elemento-symbol">Fr</div>
+                <div class="elemen|to-|name">Francio</div>
+                <div class="elemento-number">87</div>
+            </div>
+
+            <!-- Radio -->
+            <div class="elemento radio">
+                <div class="elemento-symbol">Ra</div>
+                <div class="elemen|to-|name">Radio</div>
+                <div class="elemento-number">88</div>
+            </div>
+
+            <!-- Laurencio -->
+            <div class="elemento laurencio">
+                <div class="elemento-symbol">Lr</div>
+                <div class="elemen|to-|name">Laurencio</div>
+                <div class="elemento-number">103</div>
+            </div>
+
+            <!-- Rutherfordio -->
+            <div class="elemento rutherfordio">
+                <div class="elemento-symbol">Rf</div>
+                <div class="elemen|to-|name">Rutherfordio</div>
+                <div class="elemento-number">104</div>
+            </div>
+
+            <!-- Dubnio -->
+            <div class="elemento dubnio">
+                <div class="elemento-symbol">Db</div>
+                <div class="elemen|to-|name">Dubnio</div>
+                <div class="elemento-number">105</div>
+            </div>
+
+            <!-- Seaborgio -->
+            <div class="elemento seaborgio">
+                <div class="elemento-symbol">Sg</div>
+                <div class="elemen|to-|name">Seaborgio</div>
+                <div class="elemento-number">106</div>
+            </div>
+
+            <!-- Bohrio -->
+            <div class="elemento bohrio">
+                <div class="elemento-symbol">Bh</div>
+                <div class="elemen|to-|name">Bohrio</div>
+                <div class="elemento-number">107</div>
+            </div>
+
+            <!-- Hassio -->
+            <div class="elemento hassio">
+                <div class="elemento-symbol">Hs</div>
+                <div class="elemen|to-|name">Hassio</div>
+                <div class="elemento-number">108</div>
+            </div>
+
+            <!-- Meitnerio -->
+            <div class="elemento meitnerio">
+                <div class="elemento-symbol">Mt</div>
+                <div class="elemen|to-|name">Meitnerio</div>
+                <div class="elemento-number">109</div>
+            </div>
+
+            <!-- Darmstadtio -->
+            <div class="elemento darmstadtio">
+                <div class="elemento-symbol">Ds</div>
+                <div class="elemen|to-|name">Darmstadtio</div>
+                <div class="elemento-number">110</div>
+            </div>
+
+            <!-- Roentgenio -->
+            <div class="elemento roentgenio">
+                <div class="elemento-symbol">Rg</div>
+                <div class="elemen|to-|name">Roentgenio</div>
+                <div class="elemento-number">111</div>
+            </div>
+
+            <!-- Copernicio -->
+            <div class="elemento copernicio">
+                <div class="elemento-symbol">Cn</div>
+                <div class="elemen|to-|name">Copernicio</div>
+                <div class="elemento-number">112</div>
+            </div>
+
+            <!-- Nihonio -->
+            <div class="elemento nihonio">
+                <div class="elemento-symbol">Nh</div>
+                <div class="elemen|to-|name">Nihonio</div>
+                <div class="elemento-number">113</div>
+            </div>
+
+            <!-- Flerovio -->
+            <div class="elemento flerovio">
+                <div class="elemento-symbol">Fl</div>
+                <div class="elemen|to-|name">Flerovio</div>
+                <div class="elemento-number">114</div>
+            </div>
+
+            <!-- Moscovio -->
+            <div class="elemento moscovio">
+                <div class="elemento-symbol">Mc</div>
+                <div class="elemen|to-|name">Moscovio</div>
+                <div class="elemento-number">115</div>
+            </div>
+
+            <!-- Livermorio -->
+            <div class="elemento livermorio">
+                <div class="elemento-symbol">Lv</div>
+                <div class="elemen|to-|name">Livermorio</div>
+                <div class="elemento-number">116</div>
+            </div>
+
+            <!-- Teneso -->
+            <div class="elemento teneso">
+                <div class="elemento-symbol">Ts</div>
+                <div class="elemen|to-|name">Teneso</div>
+                <div class="elemento-number">117</div>
+            </div>
+
+            <!-- Oganesón -->
+            <div class="elemento oganeson">
+                <div class="elemento-symbol">Og</div>
+                <div class="elemen|to-|name">Oganesón</div>
+                <div class="elemento-number">118</div>
+            </div>
+
+        <!-- Agrega más elementoos aquí con sus clases correspondientes -->
+  </div>
+</body>
+</html>

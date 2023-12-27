@@ -1,0 +1,64 @@
+//Crear la base de datos
+CREATE DATABASE tienda1000;
+
+//usar la base de datos
+USE tienda1000
+
+//Crear las tablas
+create table if not exists productos (id_producto INT AUTO_INCREMENT PRIMARY KEY, nombre_producto VARCHAR (30) NOT NULL, desc_producto TEXT, precio_producto DECIMAL(10,3) NOT NULL);
+
+create table if not exists usuarios (id_usuario INT AUTO_INCREMENT PRIMARY KEY NOT NULL, nombre_usuario VARCHAR (30) , contrasena_usuario VARCHAR (30) NOT NULL, telefono_usuario BIGINT (10), email_usuario VARCHAR (50));
+
+create table if not exists pedido (id_pedido INT NOT NULL, total_cant_productos INT (10), total_pedido DECIMAL (10,3), estado VARCHAR (10), pagado VARCHAR (3));
+
+create table if not exists productos_pedido (id_productos_pedidos INT AUTO_INCREMENT PRIMARY KEY, id_producto INT (4), id_pedido INT (10) NOT NULL, nombre_producto VARCHAR (30) NOT NULL, cantidad INT (9) NOT NULL, precio_producto DECIMAL(10,3) NOT NULL, total_precio DECIMAL(10,3) NOT NULL);
+
+//Llenar tabla productos
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Chocorramo', 'Suave ponque cubierto de chocolate', 2499.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Choquis', 'Bolitas de arroz inflado cubiertas de chocolate', 999.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('De todito', 'Mix de papas, platanos y chicharrones.', 2999.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Cocosette', 'Deliciosa galleta de coco', 1999.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Frunas', 'Suave dulce masticable', 499.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Chocolatina Jett', 'Deliciosa barra de chocolate', 799.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Nucita', 'Crema de vainilla con chocolate', 999.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Trululu', 'Mix de gomas de sabores surtidos', 2499.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Gudiz', 'Bolitas de arroz inflado de sabores surtidos', 2799.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Bombombum', 'Dulce para combinar con un vaso de agua pura.', 699.99);
+
+select * from productos;
+select * from usuarios;
+select * from pedido;
+select * from productos_pedido;
+
+
+
+
+
+
+CREATE DATABASE tienda1000;
+
+USE tienda1000
+
+create table if not exists productos (id_producto INT AUTO_INCREMENT PRIMARY KEY, nombre_producto VARCHAR (30) NOT NULL, desc_producto TEXT, precio_producto DECIMAL(10,3) NOT NULL);
+
+create table if not exists usuarios (id_usuario INT AUTO_INCREMENT PRIMARY KEY NOT NULL, nombre_usuario VARCHAR (30) , contrasena_usuario VARCHAR (30) NOT NULL, telefono_usuario BIGINT (10), email_usuario VARCHAR (50));
+
+create table if not exists pedido (id_pedido INT NOT NULL, total_cant_productos INT (10), total_pedido DECIMAL (10,3), estado VARCHAR (10), pagado VARCHAR (3));
+
+create table if not exists productos_pedido (id_productos_pedidos INT AUTO_INCREMENT PRIMARY KEY, id_producto INT (4), id_pedido INT (10) NOT NULL, nombre_producto VARCHAR (30) NOT NULL, cantidad INT (9) NOT NULL, precio_producto DECIMAL(10,3) NOT NULL, total_precio DECIMAL(10,3) NOT NULL);
+
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Chocorramo', 'Suave ponque cubierto de chocolate', 2499.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Choquis', 'Bolitas de arroz inflado cubiertas de chocolate', 999.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('De todito', 'Mix de papas, platanos y chicharrones.', 2999.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Cocosette', 'Deliciosa galleta de coco', 1999.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Frunas', 'Suave dulce masticable', 499.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Chocolatina Jett', 'Deliciosa barra de chocolate', 799.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Nucita', 'Crema de vainilla con chocolate', 999.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Trululu', 'Mix de gomas de sabores surtidos', 2499.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Gudiz', 'Bolitas de arroz inflado de sabores surtidos', 2799.99);
+INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES ('Bombombum', 'Dulce para combinar con un vaso de agua pura.', 699.99);
+
+select * from productos;
+select * from usuarios;
+select * from pedido;
+select * from productos_pedido;

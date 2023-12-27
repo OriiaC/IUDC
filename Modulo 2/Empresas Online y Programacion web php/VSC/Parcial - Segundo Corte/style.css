@@ -1,0 +1,42 @@
+body{
+    width: 99%; 
+}
+
+body .cuadrado{
+    border: solid;
+    border-width: 2px;
+    border-color: red;
+    float: left;
+    width: 100px;
+    height: 100px;
+    display: flex;
+}
+
+body .cuadrado .circulo{
+    margin: auto;
+    width: 80px;
+    height: 80px;
+    border: solid;
+    border-width: 2px;
+    border-color: blue;
+    border-radius: 30px;
+}
+
+.circulo{
+    /*-webkit-transform: rotate(360deg);
+    transition: 3s;*/
+    animation: animacion-circulo 3s infinite;
+}
+
+@keyframes animacion-circulo {
+    100% {transform: rotate(360deg);}
+  }
+
+button{
+    background-color: green;
+    transition: 0.5s
+}
+
+button:hover{
+    background-color: yellow;
+}

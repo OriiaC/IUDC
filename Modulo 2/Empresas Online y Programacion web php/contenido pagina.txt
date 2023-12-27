@@ -1,0 +1,63 @@
+<div class="contenido">
+                <div class="fila">
+                    <div class="elemento">
+                        <div class="gallery">
+                            <div class="elemento1">
+                                <h1>Pastel de Chocolate Triple Capa</h1>
+                                <center><img src="pastel1.jpg" alt="descripsion del pastel1"></center>
+                                <div class="desc">
+                                    <center><p style="width: 90%;">Un pastel indulgente con tres capas de bizcocho de chocolate suave y decadente, intercaladas con cremoso frosting de chocolate y adornado con virutas de chocolate negro..</p></center>
+                                </div>
+                                <center><button id="boton-comprar" onclick="abrirmodal()">Comprar ahora</button></center>
+                            </div>
+                                                        
+                        </div>
+                    </div>
+                    <div class="elemento">
+                        <div class="gallery">
+                            <div class="elemento2">
+                                <h1>Pastel de Fresa Fresca</h1>
+                            <center><img src="pastel2.jpg" alt="descripsion del pastel1"></center>
+                            <div class="desc">
+                                <center><p style="width: 90%;"></p>Un pastel ligero y esponjoso con capas de bizcocho de vainilla, rellenas de abundantes fresas frescas y crema batida, creando una explosión de sabor agridulce y dulce.</center>
+                            </div>
+                            <center><button id="boton-comprar" onclick="abrirmodal()">Comprar ahora</button></center>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="elemento">
+                        <div class="elemento">
+                            <div class="gallery">
+                                <div class="elemento3">
+                                    <h1>Pastel de Zanahoria con Nueces</h1>
+                                    <center><img src="pastel3.jpg" alt="descripsion del pastel1"></center>
+                                
+                                    <div class="desc">
+                                        <center><p style="width: 90%;"></p>Un pastel húmedo y delicioso con trozos de zanahoria rallada, nueces tostadas y un glaseado de queso crema suave que equilibra perfectamente los sabores y las texturas.</center>
+                                    </div>
+                                    <center><button id="boton-comprar" onclick="abrirmodal()">Comprar ahora</button></center>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elemento">
+                        <div class="elemento">
+                            <div class="gallery">
+                                <div class="elemento4">
+                                    <h1>Pastel de Limón Refrescante</h1>
+                                    <center><img src="pastel4.jpg" alt="descripsion del pastel1"></center>
+                                    <div class="desc">
+                                        <center><p style="width: 90%;"></p>Un pastel ligero y refrescante con un toque cítrico. El bizcocho de limón se combina con una crema de limón suave y está decorado con ralladura de limón para un sabor vibrante.</center>
+                                    </div>
+                                    <center><button id="boton-comprar" onclick="abrirmodal()">Comprar ahora</button></center>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
